@@ -16,7 +16,7 @@ echo '🏗️👷 checking for eslint errors' 🔍🧐
 # Check ESLint Standards
 npm run check-lint ||
 (
-        echo '😤🏀👋😤 Get that beans code out of here! 😤🏀👋😤 
+        echo '😤🏀👋😤 We don't eat beans here please. Go back and check your code!' 😤🏀👋😤 
                 ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.'
         false; 
 )

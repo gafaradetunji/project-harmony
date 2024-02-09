@@ -18,7 +18,7 @@ const Register = () => {
         Create account
       </h1>
       <form className="mt-[5rem] h-full">
-        <label className="border border-[1px] border-borderInput mb-[2.5rem] rounded-sm p-4 flex items-center">
+        <label className="border border-borderInput mb-[2.5rem] rounded-sm p-4 flex items-center">
           <input
             type="text"
             className="border border-none outline outline-none pe-2 flex-grow"
@@ -30,7 +30,7 @@ const Register = () => {
                 mail
             </span> */}
         </label>
-        <label className="border border-[1px] border-borderInput mb-[2.5rem] rounded-sm p-4 flex items-center">
+        <label className="border border-borderInput mb-[2.5rem] rounded-sm p-4 flex items-center">
           <input
             type="email"
             className="border border-none outline outline-none pe-2 flex-grow"
@@ -41,7 +41,7 @@ const Register = () => {
           </span>
         </label>
 
-        <label className="border border-[1px] border-borderInput mb-[2.5rem] rounded-sm p-4 flex items-center">
+        <label className="border border-borderInput mb-[2.5rem] rounded-sm p-4 flex items-center">
           <input
             type={visible ? "text" : "password"}
             className="border border-none outline outline-none pe-2 flex-grow"

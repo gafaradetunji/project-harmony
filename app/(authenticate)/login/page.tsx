@@ -1,16 +1,20 @@
 "use client";
-
 import Button from "@/component/button";
 import Link from "next/link";
 import React, { useState, useRef } from "react";
+import { authenticate } from "@/app/lib/actions";
+import { useFormState, useFormStatus } from "react-dom";
 
 const Login = () => {
+  const [loading, setLoading] = useState();
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
 
   const handleVisible = () => {
     setVisible(!visible);
   };
+
+  // const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
   return (
     <div className="mt-[10rem] px-[1.5rem] h-[100vh]">
@@ -42,6 +46,9 @@ const Login = () => {
             {visible ? "visibility" : "visibility_off"}
           </span>
         </label>
+        {/* <div>
+          {errorMessage && <p className="text-[#df0000]">{errorMessage}</p>}
+        </div> */}
         <div className="flex items-center justify-between font-lato">
           <div>
             <input type="checkbox" className="me-3" />
@@ -59,7 +66,7 @@ const Login = () => {
           className="mt-[5rem] w-full text-white bg-lightblue hover:text-lightblue hover:bg-white"
           type="submit"
         >
-          Login
+          {loading ? "loading" : "Login"}
         </Button>
       </form>
     </div>

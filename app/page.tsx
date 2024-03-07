@@ -10,6 +10,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import Button from "@/component/button";
 import SelectField from "@/component/selectField";
 import ProgressBar from "@/component/progress";
+import Link from "next/link";
 
 export default function Home() {
   const [formData, setFormData] = useState({ Stack: "" });
@@ -29,12 +30,13 @@ export default function Home() {
           Share Page
         </Button>
 
-        <Button
-          className="w-full h-[50px] ml-1.5 text-gray-700 bg-white border-[#007DFA] rounded"
-          type="submit"
+        <Link
+          href="/createpost"
+          className="w-full h-[50px] ml-1.5 text-gray-700 bg-white border-[#007DFA] rounded text-center border rounded-lg p-4  capitalize
+          font-lato font-semibold "
         >
           Create
-        </Button>
+        </Link>
       </div>
 
       <div className="bg-gray-50 p-3 rounded">

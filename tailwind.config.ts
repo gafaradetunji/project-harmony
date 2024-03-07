@@ -19,6 +19,7 @@ const config: Config = {
       colors: {
         borderInput: "#AFA8A8",
         lightblue: "#007DFA",
+        buttons: "#F0F7FF",
       },
     },
   },

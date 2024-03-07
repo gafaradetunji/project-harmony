@@ -1,14 +1,17 @@
+"use client";
 import { useState, memo } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 interface InputProps {
+  id: string;
   label?: string;
   name: string;
   placeholder?: string;
   type: string;
   register?: any; // Change this to the actual type
   errors?: any;
-  autoComplete: string;
+  className?: string;
+  autoComplete?: string;
   disabled?: boolean;
   style?: React.CSSProperties;
   maxWidth?: string;
@@ -18,12 +21,14 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = memo(
   ({
+    id,
     label,
     name,
     placeholder,
     type,
     register,
     errors,
+    className,
     autoComplete,
     disabled,
     style,
@@ -48,7 +53,7 @@ const Input: React.FC<InputProps> = memo(
         {label && (
           <label
             htmlFor={name}
-            className={`text-sm md:text-lg mb-0 ${
+            className={`text-sm md:text-lg mb-0 font-medium ${
               disabled === true ? "text-red-600" : "text-slate-800"
             }`}
           >
@@ -58,14 +63,15 @@ const Input: React.FC<InputProps> = memo(
         <div className="relative w-full" style={{ maxWidth: maxWidth }}>
           <input
             type={inputType}
-            id={name}
-            {...register(name, { required: true })}
-            aria-invalid={errors[name] ? "true" : "false"}
+            id={id}
+            name={name}
+            // {...register(name, { required: true })}
+            aria-invalid={errors ? "true" : "false"}
             autoSave="true"
             autoCorrect="on"
             autoComplete={autoComplete}
             placeholder={placeholder}
-            className={`input ${
+            className={`input pl-4 py-2 mt-2 rounded-md ${className} ${
               disabled === true ? "cursor-not-allowed" : "cursor-text"
             }`}
             style={style}
@@ -83,9 +89,9 @@ const Input: React.FC<InputProps> = memo(
             </span>
           )}
         </div>
-        {errors[name] && (
+        {errors && (
           <span role="alert" className="text-sm text-red-700 capitalize">
-            {errors[name].message}
+            {errors.message}
           </span>
         )}
       </div>

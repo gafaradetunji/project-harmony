@@ -17,6 +17,7 @@ const PostDetails = ({ postId }: { postId: string }) => {
         title={post.title}
         desc={post.desc}
         goal={post.goal}
+        tags={post.tag}
         button="Delete"
       />
     </div>

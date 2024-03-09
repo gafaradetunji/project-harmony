@@ -10,4 +10,5 @@ interface Essentials {
   desc: string;
   goal: string;
   button?: string;
+  tags?: string[];
 }

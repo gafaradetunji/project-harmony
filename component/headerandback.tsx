@@ -5,9 +5,11 @@ import Link from "next/link";
 
 const HeaderAndBack = ({
   title,
+  arrowClassName,
   className,
 }: {
   title?: string;
+  arrowClassName?: string;
   className?: string;
 }) => {
   const router = useRouter();
@@ -25,10 +27,14 @@ const HeaderAndBack = ({
     <Link
       href={``}
       onClick={handleBackClick}
-      className="flex items-center gap-4 bg-black"
+      className="flex items-center gap-4"
     >
-      <IoIosArrowBack className="h-12 w-6" />
-      {title && <h3 className="font-bold text-[1.9rem] font-lato">{title}</h3>}
+      <IoIosArrowBack className={`h-12 w-6 ${arrowClassName}`} />
+      {title && (
+        <h3 className={`font-bold text-[1.9rem] font-lato ${className}`}>
+          {title}
+        </h3>
+      )}
     </Link>
   );
 };

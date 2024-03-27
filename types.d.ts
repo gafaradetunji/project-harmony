@@ -12,3 +12,10 @@ interface Essentials {
   button?: string;
   tags?: string[];
 }
+
+interface AccountTabProps {
+  img: string;
+  title: string;
+  subtitle: boolean;
+  connect: boolean;
+}

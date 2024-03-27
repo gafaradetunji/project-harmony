@@ -71,7 +71,7 @@ const PostDetail = ({
           />
           <div className="flex items-center justify-center mt-6">
             {button && (
-              <Button className="bg-lightblue mt-3 mx-auto text-white px-8 py-2 rounded-md text-[1rem]">
+              <Button className="bg-lightblue mt-3 mx-auto text-white px-8 py-2 w-full rounded-md text-[1rem]">
                 {button}
               </Button>
             )}

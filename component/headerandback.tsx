@@ -7,10 +7,14 @@ const HeaderAndBack = ({
   title,
   arrowClassName,
   className,
+  arrow,
+  style,
 }: {
   title?: string;
   arrowClassName?: string;
   className?: string;
+  arrow?: boolean;
+  style?: string;
 }) => {
   const router = useRouter();
 
@@ -27,9 +31,9 @@ const HeaderAndBack = ({
     <Link
       href={``}
       onClick={handleBackClick}
-      className="flex items-center gap-4"
+      className={`flex items-center gap-4 ${style}`}
     >
-      <IoIosArrowBack className={`h-12 w-6 ${arrowClassName}`} />
+      {arrow && <IoIosArrowBack className={`h-12 w-6 ${arrowClassName}`} />}
       {title && (
         <h3 className={`font-bold text-[1.9rem] font-lato ${className}`}>
           {title}

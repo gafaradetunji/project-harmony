@@ -1,0 +1,35 @@
+name: Build and Deploy Project Harmony
+
+# Trigger on pushes to the main branch
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Specify the runner OS
+
+    steps:
+      - uses: actions/checkout@v3 # Checkout your code from the repository
+
+      - name: Install Node.js 18 # Install Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm" # Cache npm dependencies
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js app
+        run: npm run build
+
+      - name: Login to Vercel (using Vercel CLI)
+        uses: vercel/actions@v1 # Use the Vercel action
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Replace with your Vercel token (stored as secret)
+
+      - name: Deploy to Vercel
+        run: |
+          # Assuming your build output directory is ./out
+          vercel deploy --prod ./out

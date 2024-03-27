@@ -17,7 +17,7 @@ const Button = ({
   return (
     <button
       className={`
-          border border-none rounded-lg p-4  capitalize
+          border rounded-lg p-4  capitalize
           font-lato font-semibold 
           ${className}
         `}

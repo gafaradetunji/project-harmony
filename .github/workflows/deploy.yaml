@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Login to Vercel (using Vercel CLI)
-        uses: vercel/actions@v1 # Use the Vercel action
+        uses: vercel/actions@latest # Use the Vercel action
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Replace with your Vercel token (stored as secret)
 

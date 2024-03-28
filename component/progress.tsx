@@ -3,14 +3,17 @@ import React from "react";
 interface ProgressBarProps {
   bgcolor: string;
   completed?: number;
+  width?: string;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = (props) => {
-  const { bgcolor, completed } = props;
-
+const ProgressBar: React.FC<ProgressBarProps> = ({
+  bgcolor = "#00bfa5",
+  completed = 0,
+  width = "100%",
+}) => {
   const containerStyles = {
     height: 10,
-    width: "100%",
+    width: width,
     backgroundColor: "#e0e0de",
     borderRadius: 50,
     margin: 20,

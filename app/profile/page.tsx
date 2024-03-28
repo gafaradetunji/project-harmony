@@ -71,6 +71,7 @@ const Profile = () => {
         className="flex flex-col justify-center mt-[10px]"
       >
         <Input
+          id="username"
           name="username"
           type="text"
           register={register}
@@ -89,6 +90,7 @@ const Profile = () => {
         />
 
         <Input
+          id="fullname"
           name="Full name"
           type="text"
           register={register}
@@ -107,6 +109,7 @@ const Profile = () => {
         />
 
         <Input
+          id="email"
           name="Email"
           type="text"
           register={register}
@@ -139,6 +142,7 @@ const Profile = () => {
         />
 
         <Input
+          id="portfolio-link"
           name="Portfolio link"
           type="text"
           register={register}

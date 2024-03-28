@@ -10,7 +10,6 @@ import Button from "@/component/button";
 import SelectField from "@/component/selectField";
 import ProgressBar from "@/component/progress";
 import Link from "next/link";
-import Sidebar from "@/component/sidebar";
 
 export default function Home() {
   const [formData, setFormData] = useState({ Stack: "" });
@@ -22,9 +21,7 @@ export default function Home() {
 
   return (
     <main className="flex h-full w-full relative">
-      <div className="w-[270px]">
-        <Sidebar />
-      </div>
+      <div className="w-[270px]">{/* <Sidebar /> */}</div>
       <div className="flex-1 px-4">
         <div className="flex justify-between mt-6">
           <h1 className="text-3xl font-semibold">Welcome, Ama</h1>
@@ -42,12 +39,13 @@ export default function Home() {
             Share Page
           </Button>
 
-          <Button
-            className="w-full h-[50px] ml-1.5 text-gray-700 bg-white border-[#007DFA] rounded"
-            type="submit"
+          <Link
+            href="/createpost"
+            className="w-full h-[50px] ml-1.5 text-gray-700 bg-white border-[#007DFA] rounded text-center border rounded-lg p-4  capitalize
+          font-lato font-semibold "
           >
             Create
-          </Button>
+          </Link>
         </div>
 
         <div className="bg-gray-50 p-3 rounded">

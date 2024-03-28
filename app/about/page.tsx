@@ -1,4 +1,4 @@
-// import { Auth } from "@/component/auth/auth";
+import { Auth } from "@/component/auth/auth";
 import React from "react";
 
 const About = () => {

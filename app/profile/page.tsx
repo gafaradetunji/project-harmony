@@ -13,6 +13,7 @@ import { GoPencil } from "react-icons/go";
 import SelectField from "@/component/selectField";
 import Button from "@/component/button";
 import Input from "@/component/input";
+import Link from "next/link";
 
 interface FormData {
   username: string;
@@ -42,7 +43,10 @@ const Profile = () => {
 
   return (
     <div className="mx-auto my-[1.5rem] px-[1.5rem] h-[100vh]">
-      <IoIosArrowBack style={{ fontSize: "25px", marginRight: "8px" }} />
+      <Link href="/">
+        <IoIosArrowBack style={{ fontSize: "25px", marginRight: "8px" }} />
+      </Link>
+
       <div className="flex flex-col items-center ">
         <div className="relative flex items-center justify-center mt-4">
           <Image
